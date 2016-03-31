@@ -9,28 +9,65 @@ public class MagicNumbers {
     private int height;
 
     public int calculateA() {
-        //TODO: calculate A
-        return 0;
+        int result;
+        result = name.length() - name.replaceAll(" ", "").length() + 1;
+        result += age;
+        while(result >= 10){
+            result -= 7;
+        }
+        return result;
     }
 
     public int calculateB() {
-        //TODO: calculate B
-        return 0;
+        int result;
+        result = location.length() + income;
+        while(result >= 10){
+            result -= 7;
+        }
+        return result;
     }
 
     public int calculateC() {
-        //TODO: calculate C
-        return 0;
+        int result;
+        int a = calculateA();
+        int b = calculateB();
+        result = a + b - height;
+        while(result < 0){
+            result += 10;
+        }
+        return result;
     }
 
     public int calculateD() {
-        //TODO: calculate D
-        return 0;
+        int result;
+        int a = calculateA();
+        int b = calculateB();
+        int c = calculateC();
+        if(a > 5){
+            a += b;
+        }
+        else {
+            a += c;
+        }
+        a -= income;
+        while(a < 0){
+            a += 10;
+        }
+        result = a;
+        return result;
     }
 
     public int calculateE() {
-        //TODO: calculate E
-        return 0;
+        double result;
+        result = age * income;
+        result *= income;
+        result *= height;
+        result = Math.sqrt(result);
+        while(result >= 10){
+            result /= 2;
+        }
+        result = Math.round(result);
+        return (int)result;
     }
 
     public void setName(String name) {
