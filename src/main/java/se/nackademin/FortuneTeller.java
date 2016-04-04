@@ -17,7 +17,6 @@ public class FortuneTeller {
      *
      */
     public String calculate() {
-        //TODO: Implement
         return "Not implemented!";
     }
 

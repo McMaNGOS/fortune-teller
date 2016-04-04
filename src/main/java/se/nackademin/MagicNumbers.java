@@ -10,8 +10,8 @@ public class MagicNumbers {
 
     public int calculateA() {
         int result;
-        result = name.length() - name.replaceAll(" ", "").length() + 1;
-        result += age;
+        int numberOfNames = this.getName().split(" ").length;
+        result = this.getAge() + numberOfNames;
         while(result >= 10){
             result -= 7;
         }
@@ -20,7 +20,7 @@ public class MagicNumbers {
 
     public int calculateB() {
         int result;
-        result = location.length() + income;
+        result = this.getLocation().length() + this.getIncome();
         while(result >= 10){
             result -= 7;
         }
@@ -29,9 +29,9 @@ public class MagicNumbers {
 
     public int calculateC() {
         int result;
-        int a = calculateA();
-        int b = calculateB();
-        result = a + b - height;
+        int a = this.calculateA();
+        int b = this.calculateB();
+        result = a + b - this.getHeight();
         while(result < 0){
             result += 10;
         }
@@ -40,16 +40,16 @@ public class MagicNumbers {
 
     public int calculateD() {
         int result;
-        int a = calculateA();
-        int b = calculateB();
-        int c = calculateC();
+        int a = this.calculateA();
+        int b = this.calculateB();
+        int c = this.calculateC();
         if(a > 5){
             a += b;
         }
         else {
             a += c;
         }
-        a -= income;
+        a -= this.getIncome();
         while(a < 0){
             a += 10;
         }
@@ -59,9 +59,9 @@ public class MagicNumbers {
 
     public int calculateE() {
         double result;
-        result = age * income;
-        result *= income;
-        result *= height;
+        result = this.getAge() * this.getIncome();
+        result *= this.getIncome();
+        result *= this.getHeight();
         result = Math.sqrt(result);
         while(result >= 10){
             result /= 2;
@@ -70,6 +70,26 @@ public class MagicNumbers {
         return (int)result;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getIncome() {
+        return income;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
