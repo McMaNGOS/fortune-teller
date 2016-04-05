@@ -17,8 +17,24 @@ public class FortuneTeller {
      *
      */
     public String calculate() {
-        return "Not implemented!";
+       
+    String result;
+    String a = new Translator().fortuneA();
+    String b = new Translator().fortuneB();
+    String c = new Translator().fortuneC();
+    String d = new Translator().fortuneD();
+    String e = new Translator().fortuneE();
+    
+    
+    result = "Din framtid är " + a + 
+            ". Du borde sluta " + b + 
+            ". Vi ser att du snart kommer att skaffa " + c + 
+            ". Snart kommer du vilja " + d + 
+            ", men då är det viktigt att du är " + e;
+        
+    return result;
     }
+   
 
     public static void main(String[] args) {
         new FortuneTeller();
