@@ -5,6 +5,7 @@ import se.nackademin.gui.FortuneTellerGui;
 public class FortuneTeller {
     MagicNumbers magicNumbers;
     FortuneTellerGui fortuneTellerGui;
+    Translator translator;
 
     /*
      * Returns a fortune based on name, income, location, age and height
@@ -17,20 +18,29 @@ public class FortuneTeller {
      *
      */
     public String calculate() {
-       
-    String result;
-    String a = new Translator().fortuneA();
-    String b = new Translator().fortuneB();
-    String c = new Translator().fortuneC();
-    String d = new Translator().fortuneD();
-    String e = new Translator().fortuneE();
+      
+    translator = new Translator();  
+        
+    int numberA = magicNumbers.calculateA();
+    int numberB = magicNumbers.calculateB();
+    int numberC = magicNumbers.calculateC();
+    int numberD = magicNumbers.calculateD();
+    int numberE = magicNumbers.calculateE();
     
+    String result;
+    
+    String a = translator.fortuneA(numberA);
+    String b = translator.fortuneB(numberB);
+    String c = translator.fortuneC(numberC);
+    String d = translator.fortuneD(numberD);
+    String e = translator.fortuneE(numberE);
     
     result = "Din framtid är " + a + 
             ". Du borde sluta " + b + 
             ". Vi ser att du snart kommer att skaffa " + c + 
             ". Snart kommer du vilja " + d + 
-            ", men då är det viktigt att du är " + e;
+            ", men då är det viktigt att du är " + e + 
+            ".";
         
     return result;
     }

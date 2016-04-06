@@ -5,41 +5,38 @@ package se.nackademin;
  */
 public class Translator {
     
+    MagicNumbers magicNumbers;
+    
     public static String[] adjectivesArray = {"stor", "liten", "stark", "svag", "mjuk", "hård", "snabb", "vacker", "ljus", "mörk" };
     public static String[] nounsArray = { "en lönehöjning", "en lönesänkning", "en fotboja", "en katt", "en hund", "ett hus", "ett barn", "ett elstängsel", "en dator", "ett golv" };
     public static String[] verbsArray = { "springa", "ljuga", "flyga", "se", "vara", "äta", "mäta", "gå", "röra", "resa" };
     
-    public String fortuneA(){
+    public String fortuneA(int a){
         String result;
-        int a = new MagicNumbers().calculateA();
         result = adjectivesArray[a];
         return result;
     }
     
-    public String fortuneB(){
+    public String fortuneB(int a){
         String result;
-        int a = new MagicNumbers().calculateB();
         result = verbsArray[a];
         return result;
     }
     
-    public String fortuneC(){
+    public String fortuneC(int a){
         String result;
-        int a = new MagicNumbers().calculateC();
         result = nounsArray[a];
         return result;
     }
     
-        public String fortuneD(){
+        public String fortuneD(int a){
         String result;
-        int a = new MagicNumbers().calculateD();
         result = verbsArray[a];
         return result;
     }
         
-        public String fortuneE(){
+        public String fortuneE(int a){
         String result;
-        int a = new MagicNumbers().calculateE();
         result = adjectivesArray[a];
         return result;
     }
